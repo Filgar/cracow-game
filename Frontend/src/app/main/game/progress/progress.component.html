@@ -1,0 +1,39 @@
+<div class="progress-container">
+    <div class="progress-bar__container h-2/3">
+        <circle-progress
+            [percent]="progressValue"
+            [maxPercent]="100"
+            [outerStrokeWidth]="barWidth"
+            [innerStrokeWidth]="barWidth"
+            [innerStrokeColor]="'#aaa'"
+            [outerStrokeColor]="'#000'"
+            [space] = "-barWidth"
+            [animation]="true"
+            [animationDuration]="250"
+            [title]="progressText"
+            [titleFontSize]="fontSize"
+            [titleFontWeight]="'600'"
+            [showUnits]="false"
+            [showSubtitle]="false"
+            [showInnerStroke]="true"
+            [lazy] = "true"
+            [startFromZero]="false"
+            [radius]="radius"
+            class="progress-bar"
+        >
+        </circle-progress>
+    </div>
+    <div class="score-bar__container h-1/3">
+        <div class="score-bar" #scoreContainer>
+            <div class="score-bar__text">Score</div>
+            <span class="score-bar__text">{{scoreText}}</span>
+            <mat-progress-bar
+                class="score-bar__progress"
+                [value]="scoreProgressValue"
+                [bufferValue]="scoreProgressMaxValue"
+                [color]="'#ff0'"
+                [mode] ="'buffer'">
+            </mat-progress-bar>
+        </div>
+    </div>
+</div>

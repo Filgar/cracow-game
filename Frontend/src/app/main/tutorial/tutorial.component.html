@@ -1,0 +1,40 @@
+<div class="tutorial__container">
+    <div class="tutorial-col">
+        <div>
+            The point of the game is to find the different objects located in the city of Cracow.
+            For each object you'll receive a certain amount of points, up to maximum of 1000. The closer is your guess, the more points you get!
+            <br>
+            <br>
+            As you know, most of bus/tram stops exist in pairs with the same name. In such case, you can guess any of them - 
+            your score will be calculated based on the distance between your guess and the closest stop.
+            <br>
+            <br>
+            The last 100 objects that you guessed are remembered. It means that you won't be asked for the last 100 objects you guessed.
+            The game intelligently selects objects that you haven't guessed yet, so if you've already guessed 20 objects, but asked for another 20,
+            and there's only 28 available, list of guessed objects will be ignored and 20 objects will be selected for guessing.
+        </div>
+    </div>
+    <div class="tutorial-vertical-border"></div>
+    <div class="tutorial-col">
+        You can select various options for the game:
+        <br>
+        <ul>
+            <li><b>Types</b> allow you to select what kind of objects you want to be guessing</li>
+            <li><b>Districts</b> determine what area you want to be searching.
+                Game will ask you only about objects that are located in given areas.
+                If an object, e.g. a street, lies in two districts, it will be included if either of them is checked.</li>
+            <li><b>Amount</b> defines quantity of objects you want to be asked for in a single game. Maximum number of objects is 50.
+                If amount option is bigger than number of objects available, all requested objefcts will be taken.
+                For example, if you ask for 50 bus terminals, but there's only 45 of them in Cracow, you'll be asked to guess 45 objects. </li>
+        </ul>
+        <br>
+    </div>
+    <div class="tutorial-vertical-border"></div>
+    <div class="tutorial-col">
+        <img src="assets/points_distribution.png">
+        The chart above presents how points are distributed.
+        You can see that if you're more than 1000 meters from target, you barely get any points. However, when you get really close to the target, every meter matters!
+        For distances below 1 meter you always gain 1000 points.
+    </div>
+
+</div>

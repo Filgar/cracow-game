@@ -1,0 +1,1 @@
+export type UrbanObjectType = 'pa' | 'pt' | 'pta' | 'ul'

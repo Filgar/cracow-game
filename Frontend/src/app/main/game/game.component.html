@@ -1,0 +1,25 @@
+<div class="game__container">
+    <div class="game__panel">
+        <app-setup *ngIf="!gameService.isPlaying$.value"></app-setup>
+        <app-progress *ngIf="gameService.isPlaying$.value"></app-progress>
+    </div>
+    <div class="game__map">
+        <div class="game__header" *ngIf="gameService.isPlaying$.value">
+                <div class="game-item-name game-item-name--large">{{currentObject?.name}}</div>
+                <div class="game-item-name">{{getTypeName(currentObject?.type ?? '')}}</div>
+        </div>
+        <app-map></app-map>
+        <button 
+        *ngIf="gameService.isPlaying$.value && !scoreView" 
+        class="game__button game__button-confirm" 
+        [ngClass]="{'game__button-confirm--active': gameService.pointSelected$.value}"
+        (click)="confirmSelection()"
+            >Confirm</button>
+        <button 
+        *ngIf="gameService.isPlaying$.value && scoreView" 
+        class="game__button game__button-next" 
+        [ngClass]="{'game__button-next--active': gameService.pointSelected$.value}"
+        (click)="nextObject()"
+            >Next</button>
+    </div>
+</div>

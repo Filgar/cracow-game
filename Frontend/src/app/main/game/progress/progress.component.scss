@@ -1,0 +1,102 @@
+@keyframes progress {
+    from { progress: 0; }
+}
+
+.progress-container {
+    width: 100%;
+    height: 100%;
+
+    .progress-bar {
+        margin: auto;
+        margin-top: 2rem;
+        position: relative;
+        
+        &__text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: var(--text-large);
+            font-weight: 600;
+        }
+
+        &__container {
+            width: 100%;
+            position: relative;
+            display: flex;
+        }
+    }
+
+    .score-bar {
+        margin: auto;
+        text-align: center;
+        width: 70%;
+        position: relative;
+
+        &__container {
+            width: 100%;
+            display: flex;
+            align-items: end;
+            flex-direction: column;
+        }
+
+        &__text {
+            font-size: var(--text-large);
+            font-weight: 600;
+        }
+
+        &__progress {
+            width: 100%;
+            height: 2rem;
+            position: relative;
+            display: flex;
+            margin: auto;
+            border: 2px solid var(--base-dark);
+            border-radius: 16px;
+        }
+        
+
+        #score-added {
+            position: absolute;
+            right: 5%;
+            top: 10%;
+            font-size: var(--text-big);
+            opacity: '1';
+            color: var(--score-color);
+            font-weight: 600;
+            transform: 'translateY(0rem)';
+        }
+
+        .score-added {
+            -webkit-transition: 2s;
+            -moz-transition: 2s;
+            -ms-transition: 2s;
+            -o-transition: 2s;
+            transition: 2s;
+            opacity: var(--score-opacity);
+            transform: var(--score-transform);
+        }
+    }
+}
+       
+.mdc-linear-progress__buffer {
+    height: 100% !important;
+}
+
+.mdc-linear-progress__bar {
+    height: 100% !important;
+}
+
+.mdc-linear-progress__buffer-bar {
+    background-color: var(--base-darker) !important;
+}
+
+.mdc-linear-progress__buffer-dots {
+    display: none;
+}
+
+.mdc-linear-progress__bar-inner {
+    height: 100% !important;
+    background: var(--progress-color);
+    border: none !important;
+}

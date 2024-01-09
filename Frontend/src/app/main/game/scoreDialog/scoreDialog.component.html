@@ -1,0 +1,14 @@
+<div class="score-popup">
+    <div class="score-popup__container">
+        <div class="score-popup__header">
+            <div class="score-popup__title">Score</div>
+        </div>
+        <div class="score-popup__content">
+            <div class="score-popup__text">You scored {{gameService.score}} points</div>
+            <div class="score-popup__text">out of {{gameService.maxScore}} possible!</div>
+        </div>
+        <div class="score-popup__footer">
+            <button class="score-popup__button" (click)="closePopup()">Continue</button>
+        </div>
+    </div>
+</div>
