@@ -46,16 +46,19 @@ export class GameComponent {
     return type;
   };
 
-  confirmSelection(): void {
+  confirmSelection(event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
     const storedIds = localStorage.getItem(StorageConsts.forbiddenIds);
     const forbiddenIds = storedIds ? JSON.parse(storedIds) : [];
 
     if(forbiddenIds.length === 100) {
       forbiddenIds.splice(0, 1);
     }
-
-    forbiddenIds.push(this.currentObject?.id);
-    localStorage.setItem(StorageConsts.forbiddenIds, JSON.stringify(forbiddenIds));
+    if (!forbiddenIds.includes(this.currentObject?.id)) {
+      forbiddenIds.push(this.currentObject?.id);
+      localStorage.setItem(StorageConsts.forbiddenIds, JSON.stringify(forbiddenIds));
+    }
     this.gameService.selectionConfirmed$.next(this.currentObject!);
   }
 

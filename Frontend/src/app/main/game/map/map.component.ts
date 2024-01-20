@@ -75,10 +75,9 @@ export class MapComponent {
       if (this.preventSelection) {
         return;
       }
-
-      this.selectedPoint = event.coordinate;
       const geom = {type: 'Point', coordinates: event.coordinate};
       this.showObject(this.getFeatureFromGeom(geom), this.getObjectStyle(geom, 'purple'), true);
+      this.selectedPoint = event.coordinate;
     });
   }
 
@@ -133,7 +132,7 @@ export class MapComponent {
       this.gameService.pointSelected$.next(true);
     }
     if (zoomToLayer) {
-      this.map.getView().fit(source.getExtent()!, {padding: [150, 100, 100, 100], duration: 500});
+      this.map.getView().fit(source.getExtent(), {padding: [150, 100, 100, 100], duration: 500});
     }
   }
   

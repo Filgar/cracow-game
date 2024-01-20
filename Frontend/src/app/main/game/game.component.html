@@ -13,7 +13,7 @@
         *ngIf="gameService.isPlaying$.value && !scoreView" 
         class="game__button game__button-confirm" 
         [ngClass]="{'game__button-confirm--active': gameService.pointSelected$.value}"
-        (click)="confirmSelection()"
+        (click)="confirmSelection($event)"
             >Confirm</button>
         <button 
         *ngIf="gameService.isPlaying$.value && scoreView" 

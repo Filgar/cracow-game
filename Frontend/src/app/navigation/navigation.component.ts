@@ -15,9 +15,7 @@ export class NavigationComponent {
   mainPageTab = MainPageTab;
   public selectedTab: MainPageTab = MainPageTab.Play;
 
-  constructor() {
-    
-  }
+  constructor() {}
 
   selectTab(newTab: MainPageTab): void {
     this.selectedTab = newTab;
